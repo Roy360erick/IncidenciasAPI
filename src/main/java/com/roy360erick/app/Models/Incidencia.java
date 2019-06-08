@@ -15,7 +15,7 @@ public class Incidencia implements  Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String  acusado;
+    private String  responsable;
 
     private String motivo;
 
@@ -25,8 +25,6 @@ public class Incidencia implements  Serializable {
 
     private Boolean estado;
 
-
-
     public Long getId() {
         return id;
     }
@@ -35,12 +33,12 @@ public class Incidencia implements  Serializable {
         this.id = id;
     }
 
-    public String getAcusado() {
-        return acusado;
+    public String getResponsable() {
+        return responsable;
     }
 
-    public void setAcusado(String acusado) {
-        this.acusado = acusado;
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
     }
 
     public String getMotivo() {
