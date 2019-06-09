@@ -1,6 +1,10 @@
 package com.roy360erick.app.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -13,63 +17,75 @@ public class Incidencia implements  Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
-    private String  Responsable;
+    private String  responsable;
 
-    private String Motivo;
+    private String motivo;
 
-    private String TipoInicidencia;
+    private String tipoInicidencia;
 
-    private Date FechaIncidencia;
+    private Date fechaIncidencia;
 
-    private Boolean Estado;
+    private Boolean estado;
 
+    @JsonProperty("Id")
     public Long getId() {
-        return Id;
+        return id;
     }
 
+    @JsonSetter("Id")
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
+    @JsonProperty("Responsable")
     public String getResponsable() {
-        return Responsable;
+        return responsable;
     }
 
+    @JsonSetter("Responsable")
     public void setResponsable(String responsable) {
-        Responsable = responsable;
+        this.responsable = responsable;
     }
 
+    @JsonProperty("Motivo")
     public String getMotivo() {
-        return Motivo;
+        return motivo;
     }
 
+    @JsonSetter("Motivo")
     public void setMotivo(String motivo) {
-        Motivo = motivo;
+        this.motivo = motivo;
     }
 
+    @JsonProperty("TipoInicidencia")
     public String getTipoInicidencia() {
-        return TipoInicidencia;
+        return tipoInicidencia;
     }
 
+    @JsonSetter("TipoInicidencia")
     public void setTipoInicidencia(String tipoInicidencia) {
-        TipoInicidencia = tipoInicidencia;
+        this.tipoInicidencia = tipoInicidencia;
     }
 
+    @JsonProperty("FechaIncidencia")
     public Date getFechaIncidencia() {
-        return FechaIncidencia;
+        return fechaIncidencia;
     }
 
+    @JsonSetter("FechaIncidencia")
     public void setFechaIncidencia(Date fechaIncidencia) {
-        FechaIncidencia = fechaIncidencia;
+        this.fechaIncidencia = fechaIncidencia;
     }
 
+    @JsonProperty("Estado")
     public Boolean getEstado() {
-        return Estado;
+        return estado;
     }
 
+    @JsonSetter("Estado")
     public void setEstado(Boolean estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }

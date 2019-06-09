@@ -58,7 +58,7 @@ public class IncidenciaService {
     public ResponseMessage delete(Long id){
         try {
 
-
+            incidenciaRepository.delete(incidenciaRepository.findById(id));
             return  ResponseMessage.success("incidencia eliminada correctamente");
 
         }catch (Exception e){
