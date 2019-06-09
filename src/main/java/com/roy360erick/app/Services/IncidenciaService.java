@@ -34,23 +34,23 @@ public class IncidenciaService {
         }
     }
 
-    public ResponseMessage insert(Incidencia incidencia){
+    public Incidencia insert(Incidencia incidencia){
         try {
-             incidenciaRepository.save(incidencia);
-            return  ResponseMessage.success("incidencia registrada correctamente");
+
+            return  incidenciaRepository.save(incidencia);
 
         }catch (Exception e){
-            return ResponseMessage.error("Ocurrio un error al insertar la incidencia");
+            return null;
         }
     }
 
-    public ResponseMessage update(Incidencia incidencia){
+    public Incidencia update(Incidencia incidencia){
         try {
-            incidenciaRepository.save(incidencia);
-            return  ResponseMessage.success("incidencia actualizada correctamente");
+
+            return  incidenciaRepository.save(incidencia);
 
         }catch (Exception e){
-            return ResponseMessage.error("Ocurrio un error al actualizar la incidencia");
+            return null;
         }
     }
 
@@ -58,12 +58,12 @@ public class IncidenciaService {
     public ResponseMessage delete(Long id){
         try {
 
-            incidenciaRepository.delete(incidenciaRepository.findById(id));
-            return  ResponseMessage.success("incidencia registrada correctamente");
+
+            return  ResponseMessage.success("incidencia eliminada correctamente");
 
         }catch (Exception e){
 
-            return ResponseMessage.error("Ocurrio un error al insertar la incidencia");
+            return ResponseMessage.error("Ocurrio un error al eliminar la incidencia");
         }
     }
 

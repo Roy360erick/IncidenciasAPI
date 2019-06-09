@@ -27,12 +27,12 @@ public class IncidenciaController {
         return incidenciaService.findById(id);
     }
     @PostMapping(value = "/incidencia")
-    public ResponseMessage create(@RequestBody Incidencia incidencia){
+    public Incidencia create(@RequestBody Incidencia incidencia){
         return incidenciaService.insert(incidencia);
     }
 
     @PutMapping(value = "/incidencia")
-    public ResponseMessage update(@RequestBody Incidencia incidencia){
+    public Incidencia update(@RequestBody Incidencia incidencia){
         return incidenciaService.update(incidencia);
     }
 

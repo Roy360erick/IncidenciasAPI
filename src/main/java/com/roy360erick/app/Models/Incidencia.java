@@ -13,63 +13,63 @@ public class Incidencia implements  Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
-    private String  responsable;
+    private String  Responsable;
 
-    private String motivo;
+    private String Motivo;
 
-    private String tipoInicidencia;
+    private String TipoInicidencia;
 
-    private Date fechaIncidencia;
+    private Date FechaIncidencia;
 
-    private Boolean estado;
+    private Boolean Estado;
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getResponsable() {
-        return responsable;
+        return Responsable;
     }
 
     public void setResponsable(String responsable) {
-        this.responsable = responsable;
+        Responsable = responsable;
     }
 
     public String getMotivo() {
-        return motivo;
+        return Motivo;
     }
 
     public void setMotivo(String motivo) {
-        this.motivo = motivo;
+        Motivo = motivo;
     }
 
     public String getTipoInicidencia() {
-        return tipoInicidencia;
+        return TipoInicidencia;
     }
 
     public void setTipoInicidencia(String tipoInicidencia) {
-        this.tipoInicidencia = tipoInicidencia;
+        TipoInicidencia = tipoInicidencia;
     }
 
     public Date getFechaIncidencia() {
-        return fechaIncidencia;
+        return FechaIncidencia;
     }
 
     public void setFechaIncidencia(Date fechaIncidencia) {
-        this.fechaIncidencia = fechaIncidencia;
+        FechaIncidencia = fechaIncidencia;
     }
 
     public Boolean getEstado() {
-        return estado;
+        return Estado;
     }
 
     public void setEstado(Boolean estado) {
-        this.estado = estado;
+        Estado = estado;
     }
 }
