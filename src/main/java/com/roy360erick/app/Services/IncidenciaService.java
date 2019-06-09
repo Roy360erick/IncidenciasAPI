@@ -2,11 +2,11 @@ package com.roy360erick.app.Services;
 
 
 import com.roy360erick.app.Models.Incidencia;
+import com.roy360erick.app.Models.ResponseMessage;
 import com.roy360erick.app.Repositories.IncidenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @Service
 public class IncidenciaService {
@@ -16,55 +16,54 @@ public class IncidenciaService {
 
 
 
-    public Map<String,Object> findById(Long id){
-        Map<String,Object> response = new HashMap<>();
-
+    public Incidencia findById(Long id){
         try {
-            response.put("status", "success");
-            response.put("incidencias",incidenciaRepository.findById(id));
-            return  response;
+
+            return  incidenciaRepository.findById(id);
         }catch (Exception e){
-            response.put("status", "error");
-            return  response;
+
+            return  null;
         }
     }
 
-    public Map<String,Object> findAll(){
-        Map<String,Object> response = new HashMap<>();
-
+    public List<Incidencia>  findAll(){
         try {
-            response.put("status", "success");
-            response.put("incidencias",incidenciaRepository.findAll());
-            return  response;
+            return incidenciaRepository.findAll();
         }catch (Exception e){
-            response.put("status", "error");
-            return  response;
+            return null;
         }
     }
 
-    public Map<String,Object> insert(Incidencia incidencia){
-        Map<String,Object> response = new HashMap<>();
+    public ResponseMessage insert(Incidencia incidencia){
+        try {
+             incidenciaRepository.save(incidencia);
+            return  ResponseMessage.success("incidencia registrada correctamente");
+
+        }catch (Exception e){
+            return ResponseMessage.error("Ocurrio un error al insertar la incidencia");
+        }
+    }
+
+    public ResponseMessage update(Incidencia incidencia){
         try {
             incidenciaRepository.save(incidencia);
-            response.put("status", "success");
-            return response;
+            return  ResponseMessage.success("incidencia actualizada correctamente");
 
         }catch (Exception e){
-            response.put("status", "error");
-            return response;
+            return ResponseMessage.error("Ocurrio un error al actualizar la incidencia");
         }
     }
 
-    public Map<String,Object> delete(Long id){
-        Map<String,Object> response = new HashMap<>();
+
+    public ResponseMessage delete(Long id){
         try {
+
             incidenciaRepository.delete(incidenciaRepository.findById(id));
-            response.put("status", "success");
-            return response;
+            return  ResponseMessage.success("incidencia registrada correctamente");
 
         }catch (Exception e){
-            response.put("status", "error");
-            return response;
+
+            return ResponseMessage.error("Ocurrio un error al insertar la incidencia");
         }
     }
 
